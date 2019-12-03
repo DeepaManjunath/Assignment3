@@ -2,27 +2,27 @@
 Have used Separable Convolution 2D 32x32 with padding in the beginning
 model = Sequential()
 model.add(SeparableConv2D(95,kernel_size=(3, 3),activation='relu',padding='same',input_shape=(32, 32, 3)))# input size is 32x32x3 RF=1
-model.add(BatchNormalization(momentum=0.655))# Have used BatchNormalization and momentum value as the batch size is not mini batch
+model.add(BatchNormalization(momentum=0.155))# Have used BatchNormalization and momentum value as the batch size is not mini batch
 model.add(Dropout(0.155))
 
 model.add(SeparableConv2D(95,kernel_size=(3,3),padding='same',activation='relu'))# input size still remains 32 as padding is added in previous layer     #RF=3x3
-model.add(BatchNormalization(momentum=0.655))
+model.add(BatchNormalization(momentum=0.155))
 model.add(Dropout(0.155))
 model.add(SeparableConv2D(95,kernel_size=(3,3),strides=2,padding='same',activation='relu'))#32 #RF=5x5 Have used strides instead of Maxpooling to increase the receptive field in the next layer
-model.add(BatchNormalization(momentum=0.655))
+model.add(BatchNormalization(momentum=0.155))
 model.add(Dropout(0.155))
 
 
 
 model.add(SeparableConv2D(95,kernel_size=(3,3),padding='same',activation='relu'))#16 RF=7x7
-model.add(BatchNormalization(momentum=0.655))
+model.add(BatchNormalization(momentum=0.155))
 model.add(Dropout(0.155))
 
 model.add(Convolution2D(10,1,1,activation='relu'))#16 RF=7x7
-model.add(BatchNormalization(momentum=0.655))
+model.add(BatchNormalization(momentum=0.155))
 model.add(Dropout(0.155))
 model.add(SeparableConv2D(10,kernel_size=(3,3),strides=2,padding='same',activation='relu'))#8 RF=11x11
-model.add(BatchNormalization(momentum=0.655))
+model.add(BatchNormalization(momentum=0.155))
 model.add(Dropout(0.155))
 
 model.add(SeparableConv2D(10,kernel_size=(3,3),strides=2,padding='same',activation='relu'))#4 RF=19x19
