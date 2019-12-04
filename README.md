@@ -34,7 +34,7 @@ Strategy used.
 Tried to increase the z axis depth and reduce the x and y with some balance.
 No Dense layers used
 Convolution 2D not used
-For Data augmentation added: feature_std_normalization
+For Data augmentation added: Horizontal flip is set to true,feature_std_normalization
 Have used Dropout to minimize overfitting and adjusted Batch Normalization value accordingly. used momentum as it is not mini batch.
 Have increased the samples per epoch, was just trying to increase the train data to minimize overfitting.
 Tried to optimize the learning rate with with scheduler.
